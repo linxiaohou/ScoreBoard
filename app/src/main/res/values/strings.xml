@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ScoreBoard</string>
+    <string name="TeamA">TeamA</string>
+    <string name="TeamB">TeamB</string>
+    <string name="ScoreA">0</string>
+    <string name="ScoreB">0</string>
+    <string name="plus1">+1</string>
+    <string name="plus2">+2</string>
+    <string name="plus3">+3</string>
+    <string name="tv_undo">undo</string>
+    <string name="tv_reset">reset</string>
+</resources>

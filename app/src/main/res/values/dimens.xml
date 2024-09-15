@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="TeamSize">20sp</dimen>
+    <dimen name="ScoreSize">45sp</dimen>
+    <dimen name="PlusSize">30sp</dimen>
+    <dimen name="PlusSizeLand">20sp</dimen>
+    <dimen name="ButtonHeight">60sp</dimen>
+    <dimen name="ButtonHeightLand">50sp</dimen>
+</resources>

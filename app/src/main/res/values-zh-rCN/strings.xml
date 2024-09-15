@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">计分板</string>
+    <string name="TeamA">A队</string>
+    <string name="TeamB">B队</string>
+    <string name="ScoreA">0</string>
+    <string name="ScoreB">0</string>
+    <string name="plus1">+1</string>
+    <string name="plus2">+2</string>
+    <string name="plus3">+3</string>
+    <string name="tv_undo">撤销</string>
+    <string name="tv_reset">重置</string>
+</resources>
