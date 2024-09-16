@@ -9,7 +9,11 @@ import java.util.Stack;
 public class MyViewModel extends ViewModel {
     private final SavedStateHandle handle;
     private final Stack<Integer> scoreHistory = new Stack<>();
-    private final Stack<Boolean> teamHistory = new Stack<>();
+    private final Stack<Integer> teamHistory = new Stack<>();
+
+    private final Integer A_TEAM = 1;
+    private final Integer B_TEAM = 2;
+    private final Integer RESET = 0;
 
     public static final String KEY_A_NUMBER = "Key_A_Number";
     public static final String KEY_B_NUMBER = "Key_B_Number";
@@ -33,33 +37,38 @@ public class MyViewModel extends ViewModel {
     }
 
     public void addaTeamScore(int n) {
-        teamHistory.push(true);
+        teamHistory.push(A_TEAM);
         scoreHistory.push(getaTeamScore().getValue());
         getaTeamScore().setValue(getaTeamScore().getValue() + n);
     }
 
     public void addbTeamScore(int n) {
-        teamHistory.push(false);
+        teamHistory.push(B_TEAM);
         scoreHistory.push(getbTeamScore().getValue());
         getbTeamScore().setValue(getbTeamScore().getValue() + n);
     }
 
     public void resetScore() {
-        teamHistory.push(true);
+        teamHistory.push(RESET);
         scoreHistory.push(getaTeamScore().getValue());
         getaTeamScore().setValue(0);
-
-        teamHistory.push(false);
         scoreHistory.push(getbTeamScore().getValue());
         getbTeamScore().setValue(0);
     }
 
     public void undoScore() {
         if (!scoreHistory.empty()) {
-            if (teamHistory.pop()) {
+            if (teamHistory.peek().equals(A_TEAM)) {
+                teamHistory.pop();
                 getaTeamScore().setValue(scoreHistory.pop());
-            } else {
+            } else if (teamHistory.peek().equals(B_TEAM)) {
+                teamHistory.pop();
                 getbTeamScore().setValue(scoreHistory.pop());
+            } else if (teamHistory.peek().equals(RESET)) {
+                teamHistory.pop();
+                getbTeamScore().setValue(scoreHistory.pop());
+                getaTeamScore().setValue(scoreHistory.pop());
+
             }
         }
     }
