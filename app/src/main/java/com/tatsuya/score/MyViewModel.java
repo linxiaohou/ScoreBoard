@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 import java.util.Stack;
 
 public class MyViewModel extends ViewModel {
-    private SavedStateHandle handle;
+    private final SavedStateHandle handle;
     private final Stack<Integer> scoreHistory = new Stack<>();
     private final Stack<Boolean> teamHistory = new Stack<>();
 
