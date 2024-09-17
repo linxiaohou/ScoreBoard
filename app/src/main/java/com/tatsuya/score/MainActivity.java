@@ -1,6 +1,10 @@
 package com.tatsuya.score;
 
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
